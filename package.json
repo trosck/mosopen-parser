@@ -9,7 +9,7 @@
     "aggregate": "ts-node -r tsconfig-paths/register src/aggregate.ts",
     "geocode:geoconcept": "ts-node -r tsconfig-paths/register src/geocoder/geoconcept.ts",
     "geocode:dadata": "ts-node -r tsconfig-paths/register src/geocoder/dadata.ts",
-    "all": "npm run parse && npm run aggregate && npm run geocode"
+    "all": "npm run parse && npm run aggregate && npm run geocode:geoconcept"
   },
   "author": "trosckey",
   "license": "MIT",
