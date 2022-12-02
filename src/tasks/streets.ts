@@ -1,6 +1,6 @@
 import { JSDOM } from "jsdom";
 import logger from "@/core/logger";
-import { mosopenClient } from "@/core/axios";
+import axios from "@/core/axios";
 import { TRegion } from "./regions";
 
 export type TStreet = {
@@ -10,7 +10,7 @@ export type TStreet = {
 }
 
 export default async (region: TRegion): Promise<TStreet[]> => {
-  const { data } = await mosopenClient.get(`/region/${region.code}/streets`)
+  const { data } = await axios.get(`/region/${region.code}/streets`)
   const { document } = new JSDOM(data).window
 
   const streets = Array.from(
