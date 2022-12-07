@@ -1,15 +1,18 @@
 import { JSDOM } from "jsdom";
-import axios from "@/core/axios";
+import { mosopenClient } from "@/core/axios";
 import { TStreet } from "./streets";
 
 export type THouse = {
+  /** Номер дома */
   name: string,
+  /** Адрес с улицей и номером дома */
   full_name: string,
+  /** Ссылка дома на портале */
   link: string
 }
 
 export default async (street: TStreet): Promise<THouse[]> => {
-  const { data } = await axios.get(`/street/${street.id}`)
+  const { data } = await mosopenClient.get(`/street/${street.id}`)
   const { document } = new JSDOM(data).window
 
   const regions = Array.from(

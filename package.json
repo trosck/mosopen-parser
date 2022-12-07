@@ -7,13 +7,13 @@
   "scripts": {
     "parse": "ts-node -r tsconfig-paths/register src/index.ts",
     "aggregate": "ts-node -r tsconfig-paths/register src/aggregate.ts",
-    "geocode:geoconcept": "ts-node -r tsconfig-paths/register src/geocoder/geoconcept.ts",
-    "geocode:dadata": "ts-node -r tsconfig-paths/register src/geocoder/dadata.ts",
+    "geocode:geoconcept": "ts-node -r tsconfig-paths/register src/geocode.ts -- --type=geoconcept",
+    "geocode:dadata": "ts-node -r tsconfig-paths/register src/geocode.ts -- --type==dadata",
     "geocode": "npm run geocode:dadata",
-    "all": "npm run parse && npm run aggregate && npm run geocode:geoconcept"
+    "all": "npm run parse && npm run aggregate && npm run geocode"
   },
   "author": "trosckey",
-  "license": "MIT",
+  "license": "ISC",
   "devDependencies": {
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.9",
@@ -23,8 +23,11 @@
   "dependencies": {
     "@trosckey/scraper-utils": "^0.4.0",
     "@trosckey/url-params": "^2.3.3",
+    "@types/cli": "^0.11.21",
     "axios": "^1.2.0",
     "axios-retry": "^3.3.1",
+    "cli": "^1.0.1",
+    "dotenv": "^16.0.3",
     "jsdom": "^20.0.3",
     "pino": "^8.7.0",
     "playwright": "^1.28.1",

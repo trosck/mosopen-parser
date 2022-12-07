@@ -1,16 +1,20 @@
 import { JSDOM } from "jsdom";
 import logger from "@/core/logger";
-import axios from "@/core/axios";
+import { mosopenClient } from "@/core/axios";
 
 export type TRegion = {
+  /** Сокращенное название района */
   name: string,
+  /** Полное название района */
   full_name: string,
+  /** Ссылка района на портале */
   link: string,
+  /** Код района на портале(транслит сокращенного названия) */
   code: string
 }
 
 export default async (): Promise<TRegion[]> => {
-  const { data } = await axios.get("/regions")
+  const { data } = await mosopenClient.get("/regions")
   const { document } = new JSDOM(data).window
 
   const regions = Array.from(

@@ -4,8 +4,7 @@
     "dist",
   ],
   "include": [
-    "src/**/*.ts",
-    "ozon.ts"
+    "src/**/*.ts"
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig to read more about this file */

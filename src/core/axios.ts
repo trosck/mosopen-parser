@@ -19,7 +19,7 @@ AxiosRetry(
   }
 )
 
-export default axios.create({
+const mosopenClient = axios.create({
   baseURL: "http://mosopen.ru",
   headers: {
     "Accept": "text/html,application/xhtml+xml,application/xml;" +
@@ -38,3 +38,5 @@ export default axios.create({
                   "(KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
   }
 })
+
+export { axios, mosopenClient }

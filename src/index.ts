@@ -28,5 +28,5 @@ export type TRegionWithStreetsAndHouses = TRegion & { streets: TStreetWithHouses
     region.streets = streets
   }
 
-  await writeFile(`result.json`, JSON.stringify(result))
+  await writeFile("addresses.json", JSON.stringify(result))
 })();
