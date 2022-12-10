@@ -29,7 +29,7 @@ yarn
 - `geocode` - геокодирование(алиас на `geocode:dadata`)
   - `geocode:dadata` - использование сервиса **dadata**
   - `geocode:geoconcept` - использование сервиса **geoconcept**
-- all - последовательный запуск всех скриптов выше
+- `all` - последовательный запуск `parse`, `aggregate` и `geocode`
 
 все шаги(`parse`, `aggregate`, `geocode`) запускаются последовательно, с помощью   
 `npm run all` можно запустить сразу все. предварительно запустив Chrome в дебаг   
